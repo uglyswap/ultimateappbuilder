@@ -30,12 +30,22 @@ export const AI_MODELS = {
   // OpenAI Models (Latest 2025)
   // ==========================================
   openai: {
-    // GPT-4 Turbo (Latest - 128K context)
-    'gpt-4-turbo-2024-04-09': { name: 'GPT-4 Turbo (Latest)', maxTokens: 4096, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'general' },
+    // GPT-4o (Omni - Latest Flagship with Vision & Audio)
+    'gpt-4o': { name: 'GPT-4o (Latest Flagship)', maxTokens: 16384, contextWindow: 128000, pricing: 'high', speed: 'fast', bestFor: 'multimodal' },
+    'gpt-4o-2024-11-20': { name: 'GPT-4o (Nov 2024)', maxTokens: 16384, contextWindow: 128000, pricing: 'high', speed: 'fast', bestFor: 'multimodal' },
+    'gpt-4o-2024-08-06': { name: 'GPT-4o (Aug 2024)', maxTokens: 16384, contextWindow: 128000, pricing: 'high', speed: 'fast', bestFor: 'multimodal' },
+    'gpt-4o-2024-05-13': { name: 'GPT-4o (May 2024)', maxTokens: 16384, contextWindow: 128000, pricing: 'high', speed: 'fast', bestFor: 'multimodal' },
+    'gpt-4o-mini': { name: 'GPT-4o Mini (Best Value)', maxTokens: 16384, contextWindow: 128000, pricing: 'low', speed: 'very-fast', bestFor: 'fast-multimodal' },
+    'gpt-4o-mini-2024-07-18': { name: 'GPT-4o Mini (July 2024)', maxTokens: 16384, contextWindow: 128000, pricing: 'low', speed: 'very-fast', bestFor: 'fast-multimodal' },
+    'chatgpt-4o-latest': { name: 'ChatGPT-4o (Latest)', maxTokens: 16384, contextWindow: 128000, pricing: 'high', speed: 'fast', bestFor: 'chat' },
+
+    // GPT-4 Turbo (128K context)
     'gpt-4-turbo': { name: 'GPT-4 Turbo', maxTokens: 4096, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'general' },
+    'gpt-4-turbo-2024-04-09': { name: 'GPT-4 Turbo (Apr 2024)', maxTokens: 4096, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'general' },
     'gpt-4-turbo-preview': { name: 'GPT-4 Turbo Preview', maxTokens: 4096, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'general' },
     'gpt-4-0125-preview': { name: 'GPT-4 0125 Preview', maxTokens: 4096, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'general' },
     'gpt-4-1106-preview': { name: 'GPT-4 1106 Preview', maxTokens: 4096, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'general' },
+    'gpt-4-vision-preview': { name: 'GPT-4 Vision (Legacy)', maxTokens: 4096, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'vision-legacy' },
 
     // GPT-4 Base
     'gpt-4': { name: 'GPT-4', maxTokens: 8192, contextWindow: 8192, pricing: 'high', speed: 'slow', bestFor: 'quality' },
@@ -43,15 +53,18 @@ export const AI_MODELS = {
     'gpt-4-0613': { name: 'GPT-4 0613', maxTokens: 8192, contextWindow: 8192, pricing: 'high', speed: 'slow', bestFor: 'stable' },
 
     // GPT-3.5 (Fast & Cheap)
-    'gpt-3.5-turbo-0125': { name: 'GPT-3.5 Turbo (Latest)', maxTokens: 4096, contextWindow: 16385, pricing: 'low', speed: 'very-fast', bestFor: 'speed' },
     'gpt-3.5-turbo': { name: 'GPT-3.5 Turbo', maxTokens: 4096, contextWindow: 16385, pricing: 'low', speed: 'very-fast', bestFor: 'speed' },
+    'gpt-3.5-turbo-0125': { name: 'GPT-3.5 Turbo (Jan 2024)', maxTokens: 4096, contextWindow: 16385, pricing: 'low', speed: 'very-fast', bestFor: 'speed' },
     'gpt-3.5-turbo-16k': { name: 'GPT-3.5 Turbo 16k', maxTokens: 16385, contextWindow: 16385, pricing: 'low', speed: 'very-fast', bestFor: 'speed' },
-    'gpt-3.5-turbo-1106': { name: 'GPT-3.5 Turbo 1106', maxTokens: 4096, contextWindow: 16385, pricing: 'low', speed: 'very-fast', bestFor: 'speed' },
+    'gpt-3.5-turbo-1106': { name: 'GPT-3.5 Turbo (Nov 2023)', maxTokens: 4096, contextWindow: 16385, pricing: 'low', speed: 'very-fast', bestFor: 'speed' },
 
     // o1 Series (Reasoning Models - BEST FOR COMPLEX PROBLEMS)
     'o1': { name: 'OpenAI o1 (Latest Reasoning)', maxTokens: 100000, contextWindow: 200000, pricing: 'very-high', speed: 'slow', bestFor: 'reasoning' },
+    'o1-2024-12-17': { name: 'OpenAI o1 (Dec 2024)', maxTokens: 100000, contextWindow: 200000, pricing: 'very-high', speed: 'slow', bestFor: 'reasoning' },
     'o1-preview': { name: 'OpenAI o1 Preview', maxTokens: 32768, contextWindow: 128000, pricing: 'very-high', speed: 'slow', bestFor: 'reasoning' },
+    'o1-preview-2024-09-12': { name: 'OpenAI o1 Preview (Sep 2024)', maxTokens: 32768, contextWindow: 128000, pricing: 'very-high', speed: 'slow', bestFor: 'reasoning' },
     'o1-mini': { name: 'OpenAI o1 Mini', maxTokens: 65536, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'reasoning-fast' },
+    'o1-mini-2024-09-12': { name: 'OpenAI o1 Mini (Sep 2024)', maxTokens: 65536, contextWindow: 128000, pricing: 'high', speed: 'medium', bestFor: 'reasoning-fast' },
 
     // o3 Series (Latest Reasoning Models - January 2025)
     'o3': { name: 'OpenAI o3 (Latest)', maxTokens: 100000, contextWindow: 200000, pricing: 'very-high', speed: 'medium', bestFor: 'reasoning' },
@@ -212,6 +225,34 @@ export const AI_MODELS = {
   },
 
   // ==========================================
+  // Perplexity Models (Real-time Web Search)
+  // ==========================================
+  perplexity: {
+    'perplexity-sonar-pro': { name: 'Sonar Pro (Latest + Web)', maxTokens: 127072, contextWindow: 127072, pricing: 'medium', speed: 'fast', bestFor: 'web-search' },
+    'perplexity-sonar': { name: 'Sonar (Web Search)', maxTokens: 127072, contextWindow: 127072, pricing: 'low', speed: 'fast', bestFor: 'web-search' },
+    'perplexity-sonar-reasoning': { name: 'Sonar Reasoning', maxTokens: 127072, contextWindow: 127072, pricing: 'medium', speed: 'medium', bestFor: 'web-reasoning' },
+  },
+
+  // ==========================================
+  // Together AI Models
+  // ==========================================
+  together: {
+    'meta-llama/llama-3.3-70b-instruct-turbo': { name: 'Llama 3.3 70B Turbo', maxTokens: 128000, contextWindow: 128000, pricing: 'low', speed: 'very-fast', bestFor: 'fast-free' },
+    'meta-llama/llama-3.1-405b-instruct-turbo': { name: 'Llama 3.1 405B Turbo', maxTokens: 131072, contextWindow: 131072, pricing: 'medium', speed: 'fast', bestFor: 'quality-fast' },
+    'mistralai/mixtral-8x22b-instruct': { name: 'Mixtral 8x22B Instruct', maxTokens: 65536, contextWindow: 65536, pricing: 'low', speed: 'fast', bestFor: 'moe' },
+  },
+
+  // ==========================================
+  // Groq (Ultra-Fast Inference)
+  // ==========================================
+  groq: {
+    'llama-3.3-70b-versatile': { name: 'Llama 3.3 70B (Groq)', maxTokens: 32768, contextWindow: 32768, pricing: 'free', speed: 'ultra-fast', bestFor: 'speed-free' },
+    'llama-3.1-70b-versatile': { name: 'Llama 3.1 70B (Groq)', maxTokens: 131072, contextWindow: 131072, pricing: 'free', speed: 'ultra-fast', bestFor: 'speed-free' },
+    'llama-3.1-8b-instant': { name: 'Llama 3.1 8B Instant (Groq)', maxTokens: 8192, contextWindow: 8192, pricing: 'free', speed: 'ultra-fast', bestFor: 'ultra-speed' },
+    'mixtral-8x7b-32768': { name: 'Mixtral 8x7B (Groq)', maxTokens: 32768, contextWindow: 32768, pricing: 'free', speed: 'ultra-fast', bestFor: 'speed-free' },
+  },
+
+  // ==========================================
   // Other Notable Models
   // ==========================================
   other: {
@@ -223,12 +264,21 @@ export const AI_MODELS = {
     // Nous Research
     'nous-hermes-2-mixtral-8x7b': { name: 'Nous Hermes 2 Mixtral', maxTokens: 32000, contextWindow: 32000, pricing: 'free', speed: 'fast', bestFor: 'free' },
     'nous-capybara-7b': { name: 'Nous Capybara 7B', maxTokens: 32000, contextWindow: 32000, pricing: 'free', speed: 'very-fast', bestFor: 'free' },
+    'nous-hermes-2-yi-34b': { name: 'Nous Hermes 2 Yi 34B', maxTokens: 32768, contextWindow: 32768, pricing: 'free', speed: 'fast', bestFor: 'free-quality' },
 
-    // Dolphin
+    // Dolphin (Uncensored)
     'dolphin-mixtral-8x7b': { name: 'Dolphin Mixtral 8x7B', maxTokens: 32000, contextWindow: 32000, pricing: 'free', speed: 'fast', bestFor: 'uncensored' },
     'dolphin-2.6-mixtral-8x7b': { name: 'Dolphin 2.6 Mixtral', maxTokens: 32000, contextWindow: 32000, pricing: 'free', speed: 'fast', bestFor: 'uncensored' },
+    'dolphin-llama-3.1-70b': { name: 'Dolphin Llama 3.1 70B', maxTokens: 131072, contextWindow: 131072, pricing: 'free', speed: 'fast', bestFor: 'uncensored' },
 
-    // Anthropic-compatible
+    // WizardLM
+    'wizardlm-2-8x22b': { name: 'WizardLM 2 8x22B', maxTokens: 65536, contextWindow: 65536, pricing: 'free', speed: 'fast', bestFor: 'free-quality' },
+    'wizardlm-2-7b': { name: 'WizardLM 2 7B', maxTokens: 32000, contextWindow: 32000, pricing: 'free', speed: 'very-fast', bestFor: 'free' },
+
+    // Phind (Code Specialist)
+    'phind-codellama-34b': { name: 'Phind CodeLlama 34B', maxTokens: 16384, contextWindow: 16384, pricing: 'free', speed: 'fast', bestFor: 'code-free' },
+
+    // Creative Models
     'mythomax-l2-13b': { name: 'MythoMax L2 13B', maxTokens: 8192, contextWindow: 8192, pricing: 'free', speed: 'very-fast', bestFor: 'creative' },
     'toppy-m-7b': { name: 'Toppy M 7B', maxTokens: 32000, contextWindow: 32000, pricing: 'free', speed: 'very-fast', bestFor: 'free' },
   },

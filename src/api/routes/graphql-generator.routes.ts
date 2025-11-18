@@ -1,0 +1,172 @@
+import { Router, Request, Response } from 'express';
+import { graphqlGeneratorService } from '@/services/graphql-generator-service';
+import { logger } from '@/utils/logger';
+
+const router = Router();
+
+/**
+ * POST /api/graphql/generate-schema
+ * Generate GraphQL schema from description
+ */
+router.post('/generate-schema', async (req: Request, res: Response) => {
+  try {
+    const { projectId, description, features } = req.body;
+
+    if (!projectId || !description) {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required fields: projectId, description',
+      });
+    }
+
+    const schema = await graphqlGeneratorService.generateSchemaFromDescription(
+      projectId,
+      description,
+      features || []
+    );
+
+    res.json({
+      success: true,
+      schema,
+      message: 'GraphQL schema generated successfully! 🚀',
+    });
+  } catch (error) {
+    logger.error('Failed to generate GraphQL schema', { error });
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to generate GraphQL schema',
+    });
+  }
+});
+
+/**
+ * POST /api/graphql/generate-complete-api
+ * Generate complete GraphQL API with all files
+ */
+router.post('/generate-complete-api', async (req: Request, res: Response) => {
+  try {
+    const { projectId, description, features } = req.body;
+
+    if (!projectId || !description) {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required fields: projectId, description',
+      });
+    }
+
+    const result = await graphqlGeneratorService.generateCompleteGraphQLAPI(
+      projectId,
+      description,
+      features || []
+    );
+
+    res.json({
+      success: true,
+      ...result,
+      message: 'Complete GraphQL API generated! Production-ready code with Apollo Server, DataLoaders, and subscriptions! 🎉',
+    });
+  } catch (error) {
+    logger.error('Failed to generate complete GraphQL API', { error });
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to generate GraphQL API',
+    });
+  }
+});
+
+/**
+ * POST /api/graphql/generate-resolvers
+ * Generate resolvers for a schema
+ */
+router.post('/generate-resolvers', async (req: Request, res: Response) => {
+  try {
+    const { schema } = req.body;
+
+    if (!schema) {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required field: schema',
+      });
+    }
+
+    const resolvers = await graphqlGeneratorService.generateResolvers(schema);
+
+    res.json({
+      success: true,
+      resolvers,
+      message: 'GraphQL resolvers generated! 💪',
+    });
+  } catch (error) {
+    logger.error('Failed to generate resolvers', { error });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate GraphQL resolvers',
+    });
+  }
+});
+
+/**
+ * POST /api/graphql/generate-subscription-server
+ * Generate WebSocket subscription server
+ */
+router.post('/generate-subscription-server', async (req: Request, res: Response) => {
+  try {
+    const subscriptionServer = await graphqlGeneratorService.generateSubscriptionServer();
+
+    res.json({
+      success: true,
+      subscriptionServer,
+      message: 'GraphQL subscription server generated! Real-time updates ready! ⚡',
+    });
+  } catch (error) {
+    logger.error('Failed to generate subscription server', { error });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate subscription server',
+    });
+  }
+});
+
+/**
+ * GET /api/graphql/examples
+ * Get example GraphQL schemas
+ */
+router.get('/examples', async (req: Request, res: Response) => {
+  try {
+    const examples = [
+      {
+        name: 'Blog API',
+        description: 'Blog with posts, comments, and users',
+        features: ['auth', 'pagination', 'search'],
+      },
+      {
+        name: 'E-commerce API',
+        description: 'Products, orders, and payments',
+        features: ['auth', 'payments', 'inventory'],
+      },
+      {
+        name: 'Social Network API',
+        description: 'Users, posts, likes, and followers',
+        features: ['auth', 'subscriptions', 'real-time'],
+      },
+      {
+        name: 'Task Management API',
+        description: 'Projects, tasks, and team collaboration',
+        features: ['auth', 'teams', 'notifications'],
+      },
+    ];
+
+    res.json({
+      success: true,
+      examples,
+    });
+  } catch (error) {
+    logger.error('Failed to get GraphQL examples', { error });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get examples',
+    });
+  }
+});
+
+export default router;

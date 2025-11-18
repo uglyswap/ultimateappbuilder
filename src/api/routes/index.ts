@@ -4,6 +4,9 @@ import generationsRouter from './generations';
 import templatesRouter from './templates';
 import aiModelsRouter from './ai-models.routes';
 import customPromptsRouter from './custom-prompts.routes';
+import visualEditorRouter from './visual-editor.routes';
+import graphqlGeneratorRouter from './graphql-generator.routes';
+import mobileAppGeneratorRouter from './mobile-app-generator.routes';
 
 const router = Router();
 
@@ -13,22 +16,33 @@ router.use('/generations', generationsRouter);
 router.use('/templates', templatesRouter);
 router.use('/ai-models', aiModelsRouter);
 router.use('/custom-prompts', customPromptsRouter);
+router.use('/visual-editor', visualEditorRouter);
+router.use('/graphql', graphqlGeneratorRouter);
+router.use('/mobile', mobileAppGeneratorRouter);
 
 // API info
 router.get('/', (req, res) => {
   res.json({
     name: 'Ultimate App Builder API',
-    version: '2.0.0',
+    version: '3.0.0',
     description: 'The #1 AI-Powered App Builder in the World 🌍',
     features: {
       autonomousMode: true,
-      aiProviders: ['Anthropic', 'OpenAI', 'OpenRouter', 'Google', 'Meta', 'Mistral', 'DeepSeek', 'Cohere'],
+      visualEditor: true,
+      dragAndDrop: true,
+      aiProviders: ['Anthropic', 'OpenAI', 'OpenRouter', 'Google', 'Meta', 'Mistral', 'DeepSeek', 'Cohere', 'Perplexity', 'Together', 'Groq', 'X.AI'],
       totalModels: '200+',
       templates: 'FREE & Open Source',
       realtime: 'WebSocket Support',
       backgroundJobs: 'BullMQ Integration',
       autoDatabaseSetup: true,
       customPrompts: true,
+      graphqlGeneration: true,
+      mobileAppGeneration: true,
+      microservicesSupport: true,
+      pluginSystem: true,
+      aiCodeReview: true,
+      multiLanguage: true,
     },
     endpoints: {
       projects: '/api/projects',
@@ -36,6 +50,9 @@ router.get('/', (req, res) => {
       templates: '/api/templates',
       aiModels: '/api/ai-models',
       customPrompts: '/api/custom-prompts',
+      visualEditor: '/api/visual-editor',
+      graphql: '/api/graphql',
+      mobile: '/api/mobile',
     },
     documentation: '/api-docs',
     websocket: 'ws://localhost:3000/ws',

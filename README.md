@@ -1,6 +1,6 @@
 # 🚀 Ultimate App Builder - The #1 AI-Powered App Builder in the World
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/uglyswap/ultimateappbuilder)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/uglyswap/ultimateappbuilder)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![AI Models](https://img.shields.io/badge/AI_Models-200+-purple.svg)](#-200-ai-models-support)
 [![Templates](https://img.shields.io/badge/Templates-FREE-orange.svg)](#-20-premium-templates-100-free)
@@ -8,6 +8,16 @@
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
 
 > **Generate production-ready, full-stack applications in minutes using AI. No coding knowledge required. 100% free and open source.**
+
+## 🎉 NEW in v3.0.0!
+
+- **🎨 Visual Drag & Drop Editor** - Build UIs visually like Bolt, Lovable & v0
+- **📱 Mobile App Generation** - React Native apps for iOS & Android
+- **🔷 GraphQL API Generation** - Production-ready GraphQL APIs with Apollo Server
+- **🏗️ Microservices Architecture** - Generate microservices with Kubernetes
+- **🔌 Plugin System** - Extensible architecture for custom generators
+- **🤖 AI Code Review** - Automated code quality & security reviews
+- **🌍 Multi-Language Support** - i18n with 50+ languages
 
 ## ✨ What Makes Ultimate App Builder #1?
 
@@ -24,12 +34,17 @@ Access the world's best AI models through multiple providers:
 | Provider | Models | Best For |
 |----------|--------|----------|
 | **Anthropic** | Claude 3.5 Sonnet, Claude 3 Opus, Claude 3 Haiku | Code generation, analysis |
-| **OpenAI** | GPT-4 Turbo, GPT-4, GPT-3.5, o1, o3 | General purpose |
+| **OpenAI** | GPT-4o, GPT-4 Turbo, GPT-4, o1, o3 | General purpose, multimodal |
 | **Google** | Gemini 2.0, Gemini Pro 1.5 | Long context (2M tokens) |
 | **Meta** | Llama 3.3 70B, Llama 3.1 405B | Open source models |
 | **Mistral** | Mistral Large, Codestral | Code specialist |
-| **DeepSeek** | DeepSeek Coder, DeepSeek Chat | Fast responses |
+| **DeepSeek** | DeepSeek V3, DeepSeek R1 | Ultra cheap, reasoning |
 | **Cohere** | Command R+, Command R | Retrieval & search |
+| **Perplexity** | Sonar Pro, Sonar | Real-time web search |
+| **Together AI** | Llama Turbo, Mixtral | Fast inference |
+| **Groq** | Ultra-fast models | Fastest inference |
+| **X.AI** | Grok 2, Grok Vision | Real-time data |
+| **Qwen** | Qwen 2.5 72B, QwQ | Multilingual, free |
 | **OpenRouter** | Access to ALL models | One API for everything |
 
 **Total: 200+ models** - Choose the perfect model for your use case!
@@ -340,18 +355,22 @@ If you find Ultimate App Builder useful, please star the repo! ⭐
 ## 🚀 Roadmap
 
 - [x] Multi-agent AI system
-- [x] 200+ AI models support
+- [x] 200+ AI models support (14 providers!)
 - [x] 20+ premium templates (FREE)
 - [x] Autonomous mode (YOLO)
 - [x] Real-time WebSocket updates
 - [x] Auto database setup
 - [x] Custom system prompts
-- [ ] Visual editor (drag & drop)
-- [ ] Template marketplace
-- [ ] Plugin system
-- [ ] Mobile app generation
-- [ ] GraphQL API generation
-- [ ] Microservices architecture
+- [x] **Visual editor (drag & drop) - NEW in v3.0!**
+- [x] **Plugin system - NEW in v3.0!**
+- [x] **Mobile app generation (React Native) - NEW in v3.0!**
+- [x] **GraphQL API generation - NEW in v3.0!**
+- [x] **Microservices architecture - NEW in v3.0!**
+- [x] **AI code review - NEW in v3.0!**
+- [x] **Multi-language support (i18n) - NEW in v3.0!**
+- [ ] Template marketplace (coming soon)
+- [ ] Cloud deployment integration
+- [ ] AI-powered testing
 
 ## 🙏 Acknowledgments
 
