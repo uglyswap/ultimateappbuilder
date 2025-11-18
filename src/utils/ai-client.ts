@@ -99,29 +99,29 @@ export class AIClient {
   }
 
   private getSystemPrompt(agentType: AgentType): string {
-    const basePrompt = `You are an expert software engineer working as part of the Ultimate App Builder system.
-Your role is to generate production-ready, well-documented, and maintainable code.
-Always follow best practices, use TypeScript, and include proper error handling.`;
+    // Import world-class system prompts
+    const {
+      ORCHESTRATOR_SYSTEM_PROMPT,
+      BACKEND_SYSTEM_PROMPT,
+      FRONTEND_SYSTEM_PROMPT,
+      DATABASE_SYSTEM_PROMPT,
+      AUTH_SYSTEM_PROMPT,
+      INTEGRATIONS_SYSTEM_PROMPT,
+      DEVOPS_SYSTEM_PROMPT,
+    } = require('@/agents/prompts');
 
     const agentPrompts: Record<AgentType, string> = {
-      orchestrator: `${basePrompt}\n\nAs the Orchestrator, you coordinate all other agents and ensure the project structure is coherent.`,
-
-      backend: `${basePrompt}\n\nAs the Backend Agent, you create robust APIs using Express.js, with proper validation, error handling, and database integration.`,
-
-      frontend: `${basePrompt}\n\nAs the Frontend Agent, you build modern React applications with TypeScript, using best practices for state management and component architecture.`,
-
-      database: `${basePrompt}\n\nAs the Database Agent, you design efficient database schemas using Prisma ORM, with proper relationships and indexes.`,
-
-      auth: `${basePrompt}\n\nAs the Auth Agent, you implement secure authentication systems with JWT, bcrypt, and proper session management.`,
-
-      integrations: `${basePrompt}\n\nAs the Integrations Agent, you create reliable third-party integrations (Stripe, SendGrid, etc.) with proper error handling.`,
-
-      devops: `${basePrompt}\n\nAs the DevOps Agent, you create deployment configurations, Docker setups, and CI/CD pipelines.`,
-
-      designer: `${basePrompt}\n\nAs the Designer Agent, you create beautiful, accessible UI components with Tailwind CSS and modern design principles.`,
+      orchestrator: ORCHESTRATOR_SYSTEM_PROMPT,
+      backend: BACKEND_SYSTEM_PROMPT,
+      frontend: FRONTEND_SYSTEM_PROMPT,
+      database: DATABASE_SYSTEM_PROMPT,
+      auth: AUTH_SYSTEM_PROMPT,
+      integrations: INTEGRATIONS_SYSTEM_PROMPT,
+      devops: DEVOPS_SYSTEM_PROMPT,
+      designer: FRONTEND_SYSTEM_PROMPT, // Designer uses frontend prompt
     };
 
-    return agentPrompts[agentType] || basePrompt;
+    return agentPrompts[agentType] || BACKEND_SYSTEM_PROMPT;
   }
 }
 
